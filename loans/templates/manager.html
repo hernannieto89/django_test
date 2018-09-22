@@ -6,6 +6,7 @@
 {% endfor %}
 {% endif %}
 
+{% if loan_requests %}
 <div>Pedidos de prestamos del sistema</div>
 
 <table class="table table-bordered">
@@ -21,6 +22,7 @@
             </tr>
         </thead>
         <tbody>
+
             {% for request in loan_requests %}
                 <tr>
                     <td>{{ request.dni }}</td>
@@ -36,8 +38,14 @@
                 </tr>
 
             {% endfor %}
+
+
         </tbody>
 </table>
+
+{% else %}
+    <div>Sistema sin pedidos de prestamo</div>
+{% endif %}
 
 <div>Formulario para edicion de pedidos de prestamos</div>
 
