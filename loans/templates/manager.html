@@ -30,6 +30,9 @@
                     <td>{{ request.loan_amount }}</td>
                     <td>{{ request.approval_status }}</td>
                     <td>{{ request.email }}</td>
+                    <td>
+                        <a href="{% url 'delete_request' dni=request.dni %}">Delete</a>
+                    </td>
                 </tr>
 
             {% endfor %}

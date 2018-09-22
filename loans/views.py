@@ -42,6 +42,18 @@ def index(request):
 
 
 @staff_member_required
+def delete_request(request, dni):
+    """
+    Delete request handler view for loans app.
+    :param request: request instance
+    :param dni: string
+    :return: HttpResponse
+    """
+    LoanRequest.objects.filter(dni=dni).delete()
+    return redirect('/loans/manager')
+
+
+@staff_member_required
 def manager(request):
     """
     Manager view for loans app.
