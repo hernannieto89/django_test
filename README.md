@@ -26,7 +26,7 @@ The following endpoints are available once the server is running:
 ### localhost:port/loans/
 In this address we have a form for requesting loans.
 All fields are mandatory.
-
+[Pic](https://github.com/hernannieto89/django_test/blob/54295cb39748bd0ca57625ff3f34af89517050db/readme_img/loan_home.png)
 
 ### localhost:port/loans/manager
 This address needs staff login. Staff users are created via:
@@ -34,6 +34,7 @@ This address needs staff login. Staff users are created via:
 $ python manage.py createsuperuser
 ```
 Once logged in, all loan requests are listed alongside with an form for loan request edition.
+[Pic](https://github.com/hernannieto89/django_test/blob/54295cb39748bd0ca57625ff3f34af89517050db/readme_img/manager_home.png)
 
 ## TODO
 Add unit testing.
