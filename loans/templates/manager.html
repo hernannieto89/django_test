@@ -1,0 +1,48 @@
+{% if messages %}
+{% for message in messages %}
+<div {% if message.tags %} class="alert alert-{{ message.tags }} alert-dismissible fade show" {% endif %}>
+    <span>{{ message }}</span>
+</div>
+{% endfor %}
+{% endif %}
+
+<div>Pedidos de prestamos del sistema</div>
+
+<table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Género</th>
+                <th>Monto</th>
+                <th>Prestamo aceptado</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in loan_requests %}
+                <tr>
+                    <td>{{ request.dni }}</td>
+                    <td>{{ request.first_name }}</td>
+                    <td>{{ request.last_name }}</td>
+                    <td>{{ request.gender }}</td>
+                    <td>{{ request.loan_amount }}</td>
+                    <td>{{ request.approval_status }}</td>
+                    <td>{{ request.email }}</td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+</table>
+
+<div>Formulario para edicion de pedidos de prestamos</div>
+
+<form method="post" novalidate>
+  {% csrf_token %}
+  <table border="1">
+    {{ form }}
+  </table>
+  <button type="submit">Submit</button>
+</form>
+
