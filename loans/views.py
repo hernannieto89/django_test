@@ -5,8 +5,9 @@ Loans app views module.
 from __future__ import unicode_literals
 
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth import logout
 from django.contrib.admin.views.decorators import staff_member_required
 
 from .forms import LoanRequestForm, EditionLoanRequestForm
@@ -62,3 +63,14 @@ def manager(request):
             messages.error(request, 'Loan not found.')
 
     return render(request, 'manager.html', {'loan_requests': loan_requests, 'form': form})
+
+
+def manager_logout(request):
+    """
+    Logout handler view for loans app
+    :param request: request instance
+    :return: HttpResponse
+    """
+    if request.method == 'GET':
+        logout(request)
+    return redirect('/loans')
