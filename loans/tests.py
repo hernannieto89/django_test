@@ -8,7 +8,7 @@ from .models import LoanRequest
 
 class LoanRequestTestCase(TestCase):
     """
-    LoanRequest model testcase.
+    LoanRequest model test case.
     """
 
     def setUp(self):
