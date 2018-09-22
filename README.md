@@ -37,6 +37,5 @@ Once logged in, all loan requests are listed alongside with an form for loan req
 
 ## TODO
 Add unit testing.
-Add delete functionality.
 Improve loan request edition logic.
 Improve UI, ie, bootstrap.
